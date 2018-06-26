@@ -1,4 +1,6 @@
 sudo docker build -t azugwebsite .
 sudo docker run -p 8080:80 azugwebsite 
 
-sudo docker tag azugwebsite azugacr.azurecr.io/aci-helloworld:v1
+sudo docker tag azugwebsite azugacr.azurecr.io/awesomewebsite:v1
+sudo docker login azugacr.azurecr.io -u azugacr -p sSsXHY8iftpVzUEaM9zhoy1gfqDGp+79
+sudo docker push azugacr.azurecr.io/awesomewebsite:v1
