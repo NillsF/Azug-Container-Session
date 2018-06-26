@@ -1,0 +1,30 @@
+helm init --upgrade
+helm repo add svc-cat https://svc-catalog
+helm repo update
+helm install svc-cat/catalog --name catalog --namespace catalog --set rbacEnable=false
+kubectl get apiservice
+helm repo add azure https://kubernetescharts.blob.core.windows.net/azure
+helm repo update
+az ad sp create-for-rbac
+az account show --query id --output tsv
+
+#adapt these to your environment
+AZURE_CLIENT_ID=0e51afab-3ea8-43b2-bd7e-64703ba08abd
+AZURE_CLIENT_SECRET=6100912e-8358-4349-8058-ed0388ac286b
+AZURE_TENANT_ID=72f988bf-86f1-41af-91ab-2d7cd011db47
+AZURE_SUBSCRIPTION_ID=d19dddf3-9520-4226-a313-ae8ee08675e5
+
+helm install azure/open-service-broker-azure --name osba --namespace osba \
+    --set azure.subscriptionId=$AZURE_SUBSCRIPTION_ID \
+    --set azure.tenantId=$AZURE_TENANT_ID \
+    --set azure.clientId=$AZURE_CLIENT_ID \
+    --set azure.clientSecret=$AZURE_CLIENT_SECRET
+
+curl -sLO https://servicecatalogcli.blob.core.windows.net/cli/latest/$(uname -s)/$(uname -m)/svcat
+chmod +x ./svcat
+#Wait a while. It takes a while for all containers in all pods to start up successfully
+
+./svcat get brokers
+
+ helm install azure/wordpress --name osba-quickstart --namespace osba-quickstart
+

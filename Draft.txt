@@ -1,0 +1,12 @@
+mkdir draft
+cd draft
+git clone https://github.com/Azure/draft
+cd draft
+cd examples/example-go
+
+
+draft config set registry azugacr.azurecr.io
+az acr login -n azugacr
+
+draft create
+draft up
