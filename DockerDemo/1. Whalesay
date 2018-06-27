@@ -1,0 +1,17 @@
+sudo docker run hello-world
+
+docker ps -a
+
+docker run docker/whalesay cowsay boo
+
+mkdir mydockerbuild
+cd mydockerbuild
+
+vi dockerfile
+
+FROM docker/whalesay:latest
+RUN apt-get -y update && apt-get install -y fortunes
+CMD /usr/games/fortune -a | cowsay
+
+sudo docker build -t azugwhale .
+sudo docker run azugwhale

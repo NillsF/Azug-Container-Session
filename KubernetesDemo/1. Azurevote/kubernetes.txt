@@ -1,0 +1,8 @@
+kubectl create -f deploy_back.yaml
+kubectl create -f service_back.yaml
+kubectl get pods
+kubectl get deployments
+kubectl get service
+kubectl create -f .
+kubectl get pods
+kubectl get service --watch 

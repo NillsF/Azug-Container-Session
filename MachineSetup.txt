@@ -6,7 +6,7 @@ sudo apt-get update
 sudo apt-get install apt-transport-https -y
 sudo apt-get update
 sudo apt-get install azure-cli docker.io build-essential -y
-
+#now do Azure Setup. 
 mkdir Azug
 cd Azug
 wget https://storage.googleapis.com/kubernetes-helm/helm-v2.9.1-linux-amd64.tar.gz
