@@ -10,9 +10,9 @@ Setup has been tested on an Ubuntu 18.04 VM on Azure. Make sure you have the AZ 
 Multiple demos are provided. 
 
 1. Docker
-  1. Dockerwhale
-  2. Httpd (apache website)
+    1. Dockerwhale
+    2. Httpd (apache website)
 2. Kubernetes
-  1. Azurevote
-  2. Draft
-  3. Helm + osba
+    1. Azurevote
+    2. Draft
+    3. Helm + osba
