@@ -1,5 +1,6 @@
 # Azug-Container-Session
 If you want to repeat the demos I gave during the Azug on containers, this repo contains the setup files and some of the demo files. 
+Slides of this session are available at https://www.slideshare.net/NillsFranssens/making-sense-of-containers-docker-and-kubernetes-on-azure-103235976 
 
 ## Setup
 Setup has been tested on an Ubuntu 18.04 VM on Azure. Make sure you have the AZ CLI installed on your machine (if not installed, see section 1 of machine setup).
